@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<button id="btn">save</button>
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var context = canvas.getContext("2d");
+
+  var myImg = new Image();
+  myImg.crossOrigin = "anonymous"
+  myImg.onload = function() {
+    context.drawImage(myImg, 0, 0, 300, 200);
+  };
+  myImg.src = 'https://sxbkj-test.oss-cn-hangzhou.aliyuncs.com/ClueDistribution/localCarUsedCar/2019-08-09/1565330373502.jpg';
+  document.getElementById('btn').addEventListener('click', function () {
+    const img = document.createElement('img')
+    img.src = canvas.toDataURL("image/png")
+    document.body.appendChild(img)
+  })
+  // const array = ['a', 'd', 'b', 'z', 'x', 'v', 'a', 'c', 'a', 'b', 'd', 'z']
+  // array.forEach((item, index) => {
+  //   array[index] = {letter: item}
+  // })
+  // array.sort((x, y) => {
+  //   const a = x['letter'].toUpperCase()
+  //   const b = y['letter'].toUpperCase()
+  //   if (a > b) {
+  //     return 1
+  //   }
+  //   if (a === b) {
+  //     return 0
+  //   }
+  //   if (a < b) {
+  //     return -1
+  //   }
+  // })
+  // console.log(array)
+</script>
+</body>
+</html>

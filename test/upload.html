@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test upload</title>
+  <style>
+    #img-list {
+      display: flex;
+      align-items: center;
+    }
+    #img-list img {
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+<input type="file" id="img" multiple accept="image/*">
+<div id="img-list">
+
+</div>
+<script>
+  const fileDom = document.getElementById('img')
+  const listDom = document.getElementById('img-list')
+  let files
+  fileDom.addEventListener('change', (e) => {
+    files = e.target['files']
+    for (let item of files) {
+      if (!item.type.startsWith('image/')){ continue }
+
+      const img = document.createElement('img')
+      img.file = item
+      listDom.appendChild(img)
+
+      const reader = new FileReader()
+      reader.onload = (function(aImg) {
+        return function(e) {
+          aImg.src = e.target.result
+        }
+      })(img)
+      reader.readAsDataURL(item);
+    }
+  })
+</script>
+</body>
+</html>

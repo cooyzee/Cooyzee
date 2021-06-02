@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Loading</title>
+  <style>
+    :root {
+      --aniTime: 2s;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+    }
+    .main {
+      fill: none;
+      stroke: #00B51D;
+      /*stroke: #007fff;*/
+      stroke-width: 10;
+      transform-origin: center;
+    }
+    .mouth {
+      stroke-width: 10;
+      stroke-dasharray: 126;
+      stroke-linecap: round;
+      animation: mounthAni var(--aniTime) ease-out infinite;
+    }
+    .eye {
+      stroke-width: 10;
+      stroke-dasharray: 0 188;
+      stroke-linecap: round;
+      transform: rotate(-45deg);
+      animation: eyeAni var(--aniTime) ease-in-out infinite;
+    }
+    @keyframes mounthAni {
+      40% {
+        stroke-dasharray: 126, 63; /* 间距改为1/4 */
+      }
+      80%, 100% {
+        stroke-dasharray: 126; /* 间距恢复为1/2 */
+        transform: rotate(720deg);
+      }
+    }
+    @keyframes eyeAni {
+      40% {
+        stroke-dasharray: 0, 219; /* 间距改为7/8 */
+      }
+      80%, 100% {
+        stroke-dasharray: 0, 188; /* 间距恢复为3/4 */
+        transform: rotate(675deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <svg width="100" height="100">
+      <circle class="main mouth" cx="50" cy="50" r="40"/>
+      <circle class="main eye" cx="50" cy="50" r="40"/>
+    </svg>
+  </div>
+</body>
+</html>

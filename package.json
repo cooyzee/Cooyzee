@@ -1,0 +1,17 @@
+{
+  "name": "cooyzee",
+  "version": "1.0.0",
+  "description": "Cooyzee's working set.",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cooyzee/Cooyzee.git"
+  },
+  "author": "cooyzee",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

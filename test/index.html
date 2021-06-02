@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Demo page for test.</title>
+  <style>
+    :root {
+      font-size: 12px;
+      --fs: 16px;
+    }
+    body {
+      margin: 0;
+      line-height: 1.5;
+      background: #ffcc00;
+    }
+    .section {
+      background: palegreen;
+      display: grid;
+      grid-template-rows: 100px;
+    }
+    .grid {
+
+    }
+    video {
+      width: 375px;
+    }
+
+    /* block formatting context */
+    .bfc-container {
+    }
+    .bfc-child {
+      width: 100px;
+      height: 20px;
+      background: white;
+      margin: 20px;
+      display: flex;
+      box-shadow: 0 0 20px -5px rgba(0,0,0,.5);
+    }
+    .test {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .test .one {
+      height: 50px;
+      background-color: #fff;
+      flex: none;
+    }
+    .test .two {
+      flex-grow: 1;
+    }
+
+    .ani-btn {
+      width: 200px;
+      height: 50px;
+      animation: aether-background 40s linear 0s infinite;
+      background-repeat: repeat-x;
+      background-image: url("1.png"), url("2.png");
+    }
+    @keyframes aether-background {
+      0% {
+        background-position: 248px 50%,0 50%,0 50%
+      }
+
+      to {
+        background-position: 500% 50%,-1330px 50%,-665px 50%
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- why'd we fight, just for the loan salary-->
+<!--  <div class="test">-->
+<!--    <div class="one"></div>-->
+<!--    <div class="two">-->
+<!--      <div style="height: 100%;overflow: hidden">-->
+<!--        <div style="height: 2000px;"></div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="one"></div>-->
+<!--  </div>-->
+  <div class="bfc-container">
+    <div class="bfc-child"></div>
+    <div class="bfc-child"></div>
+  </div>
+  <div class="section">
+    <div class="grid">
+      <button class="ani-btn" onclick="play(true)">Play</button>
+      <button onclick="play(false)">Pause</button>
+    </div>
+    <div class="grid">
+      <video
+          id="video"
+          muted="muted"
+          playsinline
+          src="http://qvod.yiche.com/03bd754cvodtransbj1251489075/356bbc4b5285890786156113281/v.f30.mp4?356bbc4b5285890786156113281">
+      </video>
+    </div>
+    <div class="grid">3</div>
+    <div class="grid">4</div>
+    <div class="grid">5</div>
+    <div class="grid">6</div>
+    <div class="grid">7</div>
+  </div>
+</body>
+<script>
+  var _video = document.getElementById('video');
+  function play(type) {
+    console.log(type)
+    if (type) {
+      _video.play();
+    } else {
+      _video.pause();
+    }
+  }
+  document.addEventListener("WeixinJSBridgeReady",function(){
+    document.getElementById('video').play();
+  },false);
+
+  var now = new Date(2019, 1, 32) // JS日期自动调整
+  console.log(now)
+
+  function f() {
+    // console.log(arguments)
+    // console.log(Object.keys(arguments))
+  }
+  f(1, 2, 3)
+
+  // const arrayLike = {
+  //   0: 'a',
+  //   2: 'b',
+  //   length: 3
+  // }
+  // const a = Array.from(arrayLike)
+  // const a = Array.from('arrayLike')
+  // const a = Array.prototype.slice.call(arrayLike, 2)
+  // const a = [...arrayLike] // must be iterable, which has Symbol(Symbol.iterator)
+  // console.log(a)
+
+  // for (let i in 'arrayLike') {
+  //   console.log(i)
+  // }
+
+  function Person() {
+    this.name = "KXY";
+  }
+
+  Person.prototype = {
+    constructor: Person,
+    job: "student",
+  };
+
+  var kxy = new Person();
+  Object.defineProperty(kxy, "sex", {
+    value: "female",
+    enumerable: false
+  });
+  console.log(Object.keys(kxy))
+
+</script>
+</html>

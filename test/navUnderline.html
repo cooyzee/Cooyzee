@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>css navigation underline</title>
+  <style>
+    ul {
+      list-style: none;
+      display: flex;
+    }
+    ul li {
+      padding: 10px;
+      position: relative;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 0;
+      height: 100%;
+      border-bottom: 2px solid #000;
+      transition: all 0.2s;
+    }
+    li:hover::before {
+      width: 100%;
+      left: 0;
+    }
+    li:hover ~ li::before {
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li>不可思议的CSS</li>
+  <li>导航栏</li>
+  <li>光标小下划线跟随</li>
+  <li>PURE CSS</li>
+  <li>Nav Underline</li>
+</ul>
+<script>
+  async function async1() {
+    console.log('async1 start');
+    await async2();
+    console.log('async1 end');
+  }
+  async function async2() {
+    console.log('async2');
+  }
+  console.log('script start');
+  setTimeout(function() {
+    console.log('setTimeout');
+  }, 0);
+  async1();
+  new Promise(function(resolve) {
+    console.log('promise1');
+    resolve();
+  }).then(function() {
+    console.log('promise2');
+  });
+  console.log('script end');
+</script>
+</body>
+</html>

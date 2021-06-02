@@ -1,0 +1,15 @@
+// 单行省略
+// text-truncate
+
+// 多行省略
+@mixin text-multiple-ellipsis($n) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $n;
+  overflow: hidden;
+}
+
+@mixin ios-scroll() {
+  -webkit-overflow-scrolling: touch;
+}
+
