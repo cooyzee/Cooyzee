@@ -1,4 +1,4 @@
-## config npm's registry
+  ## config npm's registry
 npm config set registry https://registry.npm.taobao.org  
 http://registry.npmjs.org
 

@@ -16,3 +16,6 @@ let c: Color = Color.Green;
 #### basic types
 
 #### Classes
+
+#### In the end
+建议先考虑团队是否需要TypeScript，以及TS是否可以解决当前项目生产的困境。
