@@ -11,6 +11,9 @@
 
 #### Tips
 
+* Hooks are a new addition in React 16.8. They let you use state and other React
+features without a class.
+
 * Use Date.now() as a temp non-repeated id.
 
 * 判断提前，and just use `return` :

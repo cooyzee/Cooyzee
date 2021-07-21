@@ -189,3 +189,7 @@ getFullYear；getMonth；getDate；getDay；getHours；getMinutes；getSeconds�
 ##### Array
 
 `fill(value, start, end)` `reverse()`
+
+#### 隐式转换
+
+
