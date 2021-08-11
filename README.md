@@ -1,4 +1,4 @@
-# The working set for explore front-end.
+# The working set for exploring front-end.
 
 > Started from June 2.
 
