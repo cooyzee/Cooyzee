@@ -2,6 +2,7 @@ const express = require('express')
 const server = express()
 
 let path = require('path')
+
 // express.static 是Express内置的唯一一个中间件，负责托管静态资源
 server.use(express.static(path.join(__dirname, 'dist')))
 
