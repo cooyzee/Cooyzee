@@ -6,3 +6,4 @@
 2. Simplicity is the ultimate sophistication. 大繁至简
 
 ## May 13
+
